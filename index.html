@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <!-- <div class="logo"><a href="">Restaurant</a></div> -->
+        <div class="logo">Restaurant</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu-section">Menu</a></li>
+          <li><a href="registration.html">Register</a></li>
+          <li class="cart">
+            <a href="#cart-section" title="Cart">
+              <span class="Cart_count">Cart</span>
+              <i class="fa-solid fa-cart-shopping cart-icon"></i>
+            </a>
+          </li>
+        </ul>
+
+        <!-- burger -->
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- slider 1 / home -->
+    <section id="home" class="home-section">
+      <img id="mainImage" src="images/restaurant.jpg" alt="Restaurant" />
+      <div class="home-text">
+        <h1>Delicious Flavors</h1>
+        <p>Fresh ingredients. Warm atmosphere. Great experience.</p>
+      </div>
+      <div class="slider-controls">
+        <button id="prev">&lt;</button>
+        <button id="next">&gt;</button>
+      </div>
+    </section>
+
+    <!-- categories -->
+    <section id="categories-section">
+      <h2 class="section-title">Categories</h2>
+      <div id="categories" class="categories-container"></div>
+    </section>
+
+    <!-- menu -->
+    <section id="menu-section">
+      <!-- <h2 class="section-title">Our Menu</h2> -->
+      <div id="products" class="products-container"></div>
+    </section>
+
+    <!-- CART SECTION -->
+    <section id="cart-section" class="cart-section">
+      <h2>Your Cart</h2>
+      <p>Cart is empty.</p>
+    </section>
+
+    <!-- slider2 / gallery-->
+    <section class="gallery-slider">
+      <h1 class="gallerytext">Restaurant Gallery</h1>
+      <div class="gallery-wrapper">
+        <div id="mainImageContainer" class="main-image"></div>
+        <div class="thumbnails">
+          <div data-index="0"></div>
+          <div data-index="1"></div>
+          <div data-index="2"></div>
+          <div data-index="3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- google maps -->
+    <h1 class="map">Our Location</h1>
+    <div class="googlemaps">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d650.5217850543445!2d44.73887324031122!3d41.72272817665324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404473f1e984eb5b%3A0xc9bc4f7477b26c2e!2sIT%20Academy%20STEP%20Georgia!5e1!3m2!1sen!2sge!4v1768349356082!5m2!1sen!2sge"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">Restaurant</div>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu-section">Menu</a></li>
+          <li><a href="#cart-section">Cart</a></li>
+        </ul>
+        <p class="footer-text">© 2026 Restaurant Project</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

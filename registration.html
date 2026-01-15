@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Restaurant</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">Restaurant</div>
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#menu-section">Menu</a></li>
+          <li><a href="registration.html">Register</a></li>
+          <li class="cart">
+            <a href="index.html#cart-section" title="Cart">
+              <span class="Cart_count">Cart</span>
+              <i class="fa-solid fa-cart-shopping cart-icon"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <section class="register-section">
+      <form>
+        <div class="field">
+          <label for="">Name</label>
+          <input type="text" name="firstName" />
+          <p>Please enter valid UserName</p>
+        </div>
+        <div class="field">
+          <label for="">LastName</label>
+          <input type="text" name="lastName" />
+          <p>Please enter valid LastName</p>
+        </div>
+        <div class="field">
+          <label for="">Email</label>
+          <input type="email" name="email" />
+          <p>Please enter valid Email</p>
+        </div>
+        <div class="field">
+          <label for="">Password</label>
+          <input type="text" name="password" />
+          <p>Please enter valid Password</p>
+        </div>
+        <button id="registerbtn">Register</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">Restaurant</div>
+        <ul class="footer-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#menu-section">Menu</a></li>
+          <li><a href="index.html#cart-section">Cart</a></li>
+        </ul>
+        <p class="footer-text">© 2026 Restaurant Project</p>
+      </div>
+    </footer>
+
+    <script src="registration.js"></script>
+  </body>
+</html>
