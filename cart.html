@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant</title>
+    <title>Restaurant - Cart</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -39,20 +39,26 @@
     <!-- cart -->
     <main class="cart-main">
       <h1>Your Cart</h1>
-      <ul class="cart-list"></ul>
-    </main>
 
-    <!-- checkout button -->
-    <div class="checkout">
-      <button class="checkout-btn">Proceed to Checkout</button>
-    </div>
+      <ul class="cart-list"></ul>
+
+      <!-- total and checkout -->
+      <div class="cart-bottom-section">
+        <div class="cart-total-box">
+          <h3>Total: <span id="cartTotalAmount">0.00</span> ₾</h3>
+        </div>
+        <div class="checkout">
+          <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </main>
 
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-logo">Restaurant</div>
         <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#menu-section">Menu</a></li>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#menu-section">Menu</a></li>
           <li><a href="registration.html">Register</a></li>
           <li><a href="index.html#googlemaps">Location</a></li>
           <li><a href="cart.html">Cart</a></li>
@@ -61,7 +67,7 @@
       </div>
     </footer>
 
-    <script src="app.js"></script>
     <script src="cart.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

@@ -33,16 +33,3 @@ document.querySelector("form").onsubmit = function(e) {
 
 
 
-
-// burger
-let burger = document.getElementById("burger");
-let navLinks = document.querySelector(".nav-links");
-
-burger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  burger.classList.toggle("active");
-});
-
-let categoriesSection = document.getElementById("categories");
-let productsSection = document.getElementById("products");
-

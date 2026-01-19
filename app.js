@@ -18,7 +18,7 @@ let images = [
   "images/restaurant6.webp",
   "images/restaurant4.jpg",
   "images/restaurant7.jpg",
-  "images/restaurant4.jpg",
+  "images/restaurant9.png",
   "images/restaurant7.webp",
 ];
 
@@ -89,43 +89,89 @@ showGalleryImage(0);
 
 
 
+// cart
+let allProducts = [];
+let allCategories = [];
 
 // fetch categories
 fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
   .then((res) => res.json())
   .then((categories) => {
+    allCategories = categories;
+
+    categoriesSection.innerHTML = "";
+
+    categoriesSection.innerHTML += `
+      <button class="category-btn active" data-category-id="all">All</button>
+    `;
+
     categories.forEach((category) => {
       categoriesSection.innerHTML += `
-        <button class="category-btn">${category.name}</button>
+        <button class="category-btn" data-category-id="${category.id}">${category.name}</button>
       `;
+    });
+
+    document.querySelectorAll(".category-btn").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        document
+          .querySelectorAll(".category-btn")
+          .forEach((b) => b.classList.remove("active"));
+
+        this.classList.add("active");
+
+        const categoryId = this.dataset.categoryId;
+        filterProductsByCategory(categoryId);
+      });
     });
   });
 
-
-
-
-// fetch products
-fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
-  .then((res) => res.json())
-  .then((products) => {
-    products.forEach((product) => {
-      productsSection.innerHTML += `
-        <div class="product-card">
-          <img src="${product.image}" alt="${product.name}">
-          <h3>${product.name}</h3>
-          <p class="price">${product.price} ₾</p>
-          <button class="btn-add">Add to Cart</button>
-<button class="btn-add"
-  onclick="addToCart(${product.id}, ${product.price})">
-  Add to Cart
-</button>
-        </div>
-      `;
+// fetch all products
+function fetchAllProducts() {
+  fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
+    .then((res) => res.json())
+    .then((products) => {
+      allProducts = products;
+      displayProducts(products);
     });
+}
+
+// display products
+function displayProducts(products) {
+  productsSection.innerHTML = "";
+
+  if (products.length === 0) {
+    productsSection.innerHTML =
+      '<p class="no-products">No products found in this category.</p>';
+    return;
+  }
+
+  products.forEach((product) => {
+    productsSection.innerHTML += `
+      <div class="product-card">
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p class="price">${product.price} ₾</p>
+        <button class="btn-add" onclick="addToCart(${product.id}, ${product.price})">
+          Add to Cart
+        </button>
+      </div>
+    `;
   });
+}
 
+// filter products by category
+function filterProductsByCategory(categoryId) {
+  if (categoryId === "all") {
+    displayProducts(allProducts);
+    return;
+  }
 
-  
+  const filteredProducts = allProducts.filter(
+    (product) => product.categoryId == categoryId,
+  );
+
+  displayProducts(filteredProducts);
+}
 
 // add to cart
 function addToCart(id, price) {
@@ -148,3 +194,5 @@ function addToCart(id, price) {
       alert("Added to cart ✅");
     });
 }
+
+document.addEventListener("DOMContentLoaded", fetchAllProducts);
