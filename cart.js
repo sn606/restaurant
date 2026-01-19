@@ -96,19 +96,21 @@ function removeItem(id) {
 }
 
 
-  
+
+
+
   //checkouts rom davachert amova alerti
-  const checkoutBtn = document.querySelector('.checkout-btn');
+document.addEventListener('DOMContentLoaded', function() {
+  let checkoutBtn = document.querySelector('.checkout-btn');
   if (checkoutBtn) {
     checkoutBtn.addEventListener('click', function() {
-      const total = parseFloat(cartTotalAmount.textContent);
+      let total = parseFloat(cartTotalAmount.textContent);
       
       if (total === 0) {
         alert("Your cart is empty!");
         return;
       }
-      alert(`Thank you for your order!\nTotal: ${total.toFixed(2)} ₾`);
-
+      alert("Thank you for your order!\nTotal: " + total.toFixed(2) + " ₾");
     });
   }
 });
