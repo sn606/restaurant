@@ -2,8 +2,8 @@ let allInputs = document.querySelectorAll("input");
 let formButton = document.getElementById("registerbtn");
 
 let regexData = {
-    firstName: /^[A-Z]{1}[a-z]{4,8}$/,
-    lastName: /^[A-Z]{1}[a-z]{4,15}$/,
+    firstName: /^[A-Z]{1}[a-z]{1,8}$/,
+    lastName: /^[A-Z]{1}[a-z]{2,15}$/,
     email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
     password: /^[0-9]{5,10}$/,
 }

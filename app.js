@@ -1,4 +1,3 @@
-
 // burger
 let burger = document.getElementById("burger");
 let navLinks = document.querySelector(".nav-links");
@@ -12,6 +11,8 @@ let categoriesSection = document.getElementById("categories");
 let productsSection = document.getElementById("products");
 
 
+
+
 // fetch categories
 fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
   .then((res) => res.json())
@@ -22,6 +23,7 @@ fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
       `;
     });
   });
+
 
 
 
@@ -40,6 +42,9 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
       `;
     });
   });
+
+
+
 
 
 
@@ -85,27 +90,25 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
 
 
 
-// slider 1 > es uket mushaobs
 
+// slider 1 > es uket mushaobs
 let images = [
   "images/restaurant.jpg",
   "images/restaurant6.webp",
   "images/restaurant4.jpg",
   "images/restaurant7.jpg",
   "images/restaurant4.jpg",
-  "images/restaurant7.webp"
+  "images/restaurant7.webp",
 ];
 
 let mainImage = document.getElementById("mainImage");
 let current = 0;
 let sliderInterval;
 
-
 function showImage(index) {
   mainImage.src = images[index];
 }
 
-// start auto slide
 function startAutoSlide() {
   sliderInterval = setInterval(() => {
     current++;
@@ -114,12 +117,10 @@ function startAutoSlide() {
   }, 5000);
 }
 
-// stop auto slide
 function stopAutoSlide() {
   clearInterval(sliderInterval);
 }
 
-// next
 document.getElementById("next").addEventListener("click", () => {
   stopAutoSlide();
   current++;
@@ -128,7 +129,6 @@ document.getElementById("next").addEventListener("click", () => {
   startAutoSlide();
 });
 
-// prev
 document.getElementById("prev").addEventListener("click", () => {
   stopAutoSlide();
   current--;
@@ -136,7 +136,6 @@ document.getElementById("prev").addEventListener("click", () => {
   showImage(current);
   startAutoSlide();
 });
-
 
 startAutoSlide();
 
@@ -151,7 +150,7 @@ let galleryImages = [
   "images/restaurant5.jpg",
   "images/restaurant8.png",
   "images/restaurant9.png",
-  "images/restaurant11.jpg"
+  "images/restaurant11.jpg",
 ];
 
 let mainImageContainer = document.getElementById("mainImageContainer");
@@ -160,7 +159,7 @@ let thumbs = document.querySelectorAll(".thumbnails div");
 function showGalleryImage(index) {
   mainImageContainer.style.backgroundImage = `url(${galleryImages[index]})`;
 
-  thumbs.forEach(t => t.classList.remove("active"));
+  thumbs.forEach((t) => t.classList.remove("active"));
   thumbs[index].classList.add("active");
 }
 
@@ -170,12 +169,3 @@ thumbs.forEach((thumb, index) => {
 });
 
 showGalleryImage(0);
-
-
-
-
-
-
-
-
-
