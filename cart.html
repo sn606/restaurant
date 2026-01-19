@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register - Restaurant</title>
+    <title>Restaurant</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="registration.css" />
   </head>
+
   <body>
     <header class="header">
       <nav class="nav">
@@ -27,6 +27,7 @@
             </a>
           </li>
         </ul>
+
         <div class="burger" id="burger">
           <span></span>
           <span></span>
@@ -35,31 +36,16 @@
       </nav>
     </header>
 
-    <section class="register-section">
-      <form>
-        <div class="field">
-          <label for="">Name</label>
-          <input type="text" name="firstName" />
-          <p>Please enter valid Name</p>
-        </div>
-        <div class="field">
-          <label for="">LastName</label>
-          <input type="text" name="lastName" />
-          <p>Please enter valid LastName</p>
-        </div>
-        <div class="field">
-          <label for="">Email</label>
-          <input type="email" name="email" />
-          <p>Please enter valid Email</p>
-        </div>
-        <div class="field">
-          <label for="">Password</label>
-          <input type="text" name="password" />
-          <p>Please enter valid Password</p>
-        </div>
-        <button id="registerbtn">Register</button>
-      </form>
-    </section>
+    <!-- cart -->
+    <main class="cart-main">
+      <h1>Your Cart</h1>
+      <ul class="cart-list"></ul>
+    </main>
+
+    <!-- checkout button -->
+    <div class="checkout">
+      <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
 
     <footer class="footer">
       <div class="footer-container">
@@ -75,6 +61,7 @@
       </div>
     </footer>
 
-    <script src="registration.js"></script>
+    <script src="app.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>
