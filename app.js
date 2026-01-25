@@ -247,23 +247,54 @@ function displayProducts(products) {
 
 // add to cart function
 function addToCart(id, price) {
-  let info = {
-    productId: id,
-    quantity: 1,
-    price: price,
-  };
+  fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+    .then((res) => res.json())
+    .then((cartItems) => {
+      let existingItem = cartItems.find((item) => item.product.id === id);
 
-  fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      accept: "text/plain",
-    },
-    body: JSON.stringify(info),
-  })
-    .then((res) => res.text())
-    .then(() => {
-      alert("Added to cart ✅");
+      if (existingItem) {
+        let newQuantity = existingItem.quantity + 1;
+
+        fetch("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "*/*",
+          },
+          body: JSON.stringify({
+            productId: id,
+            quantity: newQuantity,
+            price: price,
+          }),
+        })
+          .then((res) => res.text())
+          .then(() => {
+            alert("Added to cart ✅");
+          });
+      } else {
+        let info = {
+          productId: id,
+          quantity: 1,
+          price: price,
+        };
+
+        fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "text/plain",
+          },
+          body: JSON.stringify(info),
+        })
+          .then((res) => res.text())
+          .then(() => {
+            alert("Added to cart ✅");
+          });
+      }
+    })
+    .catch((error) => {
+      console.error("Error checking cart:", error);
+      alert("Error adding to cart");
     });
 }
 
@@ -314,7 +345,7 @@ function setupFilters() {
   }
 }
 
-// 
+//
 document.addEventListener("DOMContentLoaded", function () {
   fetchAllProducts();
   setupFilters();
