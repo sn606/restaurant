@@ -56,10 +56,75 @@
       <div id="categories" class="categories-container"></div>
     </section>
 
-    <!-- menu -->
+    <!-- menu section da filtrebi -->
     <section id="menu-section">
-      <!-- <h2 class="section-title">Our Menu</h2> -->
-      <div id="products" class="products-container"></div>
+      <div class="menu-with-filters">
+        <!-- filtrebi -->
+        <div class="filters-sidebar">
+          <div class="filter-panel">
+            <h3>Filter</h3>
+
+            <!-- spiciness -->
+            <div class="filter-group">
+              <label for="spiciness-select">Spiciness:</label>
+              <select id="spiciness-select" class="filter-select">
+                <option value="null">Not Chosen</option>
+                <option value="0">Not Spicy (0)</option>
+                <option value="1">🌶️ (1)</option>
+                <option value="2">🌶️🌶️ (2)</option>
+                <option value="3">🌶️🌶️🌶️ (3)</option>
+                <option value="4">🌶️🌶️🌶️🌶️ (4)</option>
+              </select>
+            </div>
+
+            <!-- checkboxes -->
+            <div class="filter-group checkbox-group">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  class="filter-checkbox"
+                  id="noNuts-checkbox"
+                />
+                <span>No Nuts</span>
+              </label>
+            </div>
+
+            <div class="filter-group checkbox-group">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  class="filter-checkbox"
+                  id="vegetarian-checkbox"
+                />
+                <span>Vegetarian only</span>
+              </label>
+            </div>
+
+            <!-- reset and apply buttons -->
+            <div class="filter-buttons">
+              <button
+                type="button"
+                id="reset-filters"
+                class="filter-action-btn"
+              >
+                Reset
+              </button>
+              <button
+                type="button"
+                id="apply-filters"
+                class="filter-action-btn apply-btn"
+              >
+                Apply Filter
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- products -->
+        <div class="products-area">
+          <div id="products" class="products-container"></div>
+        </div>
+      </div>
     </section>
 
     <!-- slider2 -->
@@ -91,8 +156,8 @@
       <div class="footer-container">
         <div class="footer-logo">Restaurant</div>
         <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#menu-section">Menu</a></li>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#menu-section">Menu</a></li>
           <li><a href="registration.html">Register</a></li>
           <li><a href="index.html#googlemaps">Location</a></li>
           <li><a href="cart.html">Cart</a></li>
