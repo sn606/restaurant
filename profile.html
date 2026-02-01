@@ -34,33 +34,13 @@
     </header>
 
     <section class="register-section">
-      <h2>Register</h2>
-      <form id="registerForm">
-        <div class="field">
-          <label for="firstName">First Name</label>
-          <input type="text" name="firstName" required />
-          <p>Please enter valid Name - Start with capital</p>
-        </div>
-        <div class="field">
-          <label for="lastName">Last Name</label>
-          <input type="text" name="lastName" required />
-          <p>Please enter valid LastName - Start with capital</p>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" name="email" required />
-          <p>Please enter valid Email</p>
-        </div>
-        <div class="field">
-          <label for="password">Password</label>
-          <input type="password" name="password" required />
-          <p>Please enter valid Password - Only digits, 5+ characters</p>
-        </div>
-        <button type="submit" id="registerbtn">Register</button>
-        <p style="margin-top: 15px;">
-          Already have an account? <a href="login.html">Login here</a>
-        </p>
-      </form>
+      <h2>Your Profile</h2>
+      <div id="profileInfo">
+        <p>Loading profile...</p>
+      </div>
+      <button onclick="logout()" style="margin-top: 20px; background: #e74c3c;">
+        Logout
+      </button>
     </section>
 
     <footer class="footer">
@@ -78,7 +58,7 @@
       </div>
     </footer>
 
-    <script src="registration.js"></script>
+    <script src="profile.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

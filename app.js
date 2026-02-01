@@ -350,3 +350,35 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchAllProducts();
   setupFilters();
 });
+
+
+
+
+
+
+// login stuff
+// check login status 
+function checkLoginStatus() {
+    let restaurantToken = Cookies.get("restaurant_token");
+    let educationToken = Cookies.get("education_token");
+    
+    if (restaurantToken || educationToken) {
+        console.log("User is logged in");
+        let loginLinks = document.querySelectorAll('a[href="login.html"]');
+        loginLinks.forEach(link => {
+            link.textContent = "Profile";
+            link.href = "profile.html";
+        });
+    }
+}
+
+// adding to DOMContentLoaded
+document.addEventListener("DOMContentLoaded", function () {
+    fetchAllProducts();
+    setupFilters();
+    checkLoginStatus();
+});
+
+
+
+
